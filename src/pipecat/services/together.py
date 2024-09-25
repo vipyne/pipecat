@@ -353,7 +353,7 @@ class TogetherAssistantContextAggregator(LLMAssistantContextAggregator):
         run_llm = False
 
         aggregation = self._aggregation
-        self._aggregation = ""
+        await super()._push_aggregation()
 
         try:
             if self._function_call_result:
